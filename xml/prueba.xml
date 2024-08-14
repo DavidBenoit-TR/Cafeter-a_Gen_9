@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Padre atributoPadre="atributoPadre">
+	<Hijo atributoHijo="atributoHijo1" esteno="si">
+		<nodo>Contenido del Nodo 1</nodo>
+		<nodo>Contenido del Nodo 2</nodo>
+		<nodo>Contenido del Nodo 3</nodo>
+	</Hijo>
+	<Hijo atributoHijo="atributoHijo2" esteno="no">
+		<nodo>Contenido del Nodo 1</nodo>
+		<nodo>Contenido del Nodo 2</nodo>
+		<nodo>Contenido del Nodo 3</nodo>
+	</Hijo>
+	<Hijo atributoHijo="atributoHijo3" esteno="si">
+		<nodo>Contenido del Nodo 1</nodo>
+		<nodo>Contenido del Nodo 2</nodo>
+		<nodo>Contenido del Nodo 3</nodo>
+	</Hijo>
+</Padre>
