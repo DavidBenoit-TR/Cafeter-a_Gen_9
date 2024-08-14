@@ -13,26 +13,26 @@
 			<Platillo Nombre="Huevos con Jamón" Orden="1">
 				<Descripcion><![CDATA[Huevos revueltos con Jamon & Queso]]></Descripcion>
 				<Precio>$25</Precio>
-				<Imagen>/IMG/1.jpg</Imagen>
+				<Imagen>assets/img/huevos.jpg</Imagen>
 			</Platillo>
 			<Platillo Nombre="Desayuno Europeo" Orden="2">
 				<Descripcion><![CDATA[ Café y pan francés]]></Descripcion>
 				<Precio>
 					$23
 				</Precio>
-				<Imagen>/IMG/2.jpg</Imagen>
+				<Imagen>assets/img/Desayuno_europeo.jpg</Imagen>
 			</Platillo>
 			<Platillo Nombre="Desayuno Estudiante" Orden="3">
 				<Descripcion><![CDATA[ Café, Huevos y Yogurth]]></Descripcion>
 				<Precio>$30</Precio>
-				<Imagen>/IMG/3.jpg</Imagen>
+				<Imagen>assets/img/Desayono_Estudiante.jpg</Imagen>
 			</Platillo>
 			<Platillo Nombre="Desayuno De Lujo" Orden="4">
 				<Descripcion><![CDATA[ Café, Jugo, fruta, huevos y pan francés]]></Descripcion>
 				<Precio>
 					$45
 				</Precio>
-				<Imagen>/IMG/4.jpg</Imagen>
+				<Imagen>assets/img/Desayuno_Lujo.jpeg</Imagen>
 			</Platillo>
 		</Tipo>
 
@@ -42,21 +42,21 @@
 				<Precio>
 					$25
 				</Precio>
-				<Imagen>/IMG/5.jpg</Imagen>
+				<Imagen>assets/img/cemitas-poblanas-1024x676.jpg</Imagen>
 			</Platillo>
 			<Platillo Nombre="Comida corrida" Orden="2">
 				<Descripcion><![CDATA[ Comida de 3 tiempos incluye bebida]]></Descripcion>
 				<Precio>
 					$45
 				</Precio>
-				<Imagen>/IMG/6.jpg</Imagen>
+				<Imagen>assets/img/Comida_corrida.jpeg</Imagen>
 			</Platillo>
 			<Platillo Nombre="Enchiladas Suizas" Orden="3">
 				<Descripcion><![CDATA[ 3 enchiladas en salsa verde]]></Descripcion>
 				<Precio>
 					$35
 				</Precio>
-				<Imagen>/IMG/7.jpg</Imagen>
+				<Imagen>assets/img/Enchiladas_Suizas.jpg</Imagen>
 			</Platillo>
 			<Platillo Nombre="Mole poblano" Orden="4" Especialidad="SI">
 				<Descripcion><![CDATA[ Mole poblano servido con arroz, pollo y frijoles]]></Descripcion>
@@ -65,15 +65,15 @@
 				<Precio>
 					$65
 				</Precio>
-				<Imagen>/IMG/8.jpg</Imagen>
-				<Imagen>/IMG/8a.jpg</Imagen>
+				<Imagen>assets/img/8.jpg</Imagen>
+				<Imagen>assets/img/8a.jpg</Imagen>
 				<Ingredientes>
 					<Ingrediente Nombre="Ingredientes">chocolate, chiles,jitomate,almendras</Ingrediente>
 
-					<Ingrediente Imagen="/IMG/8b.jpg" Nombre="Chocolate"></Ingrediente>
+					<Ingrediente Imagen="assets/img/8b.jpg" Nombre="Chocolate"></Ingrediente>
 
 
-					<Ingrediente Imagen="/IMG/8c.jpg" Nombre="Ajonjolí"></Ingrediente>
+					<Ingrediente Imagen="assets/img/8c.jpg" Nombre="Ajonjolí"></Ingrediente>
 				</Ingredientes>
 			</Platillo>
 		</Tipo>
@@ -84,28 +84,28 @@
 				<Precio>
 					$65
 				</Precio>
-				<Imagen>/IMG/9.jpg</Imagen>
+				<Imagen>assets/img/Tacos-Pastor-Portada.jpg</Imagen>
 			</Platillo>
 			<Platillo Nombre="Tacos árabes" Orden="2">
 				<Descripcion><![CDATA[ 1 Taco árabe]]></Descripcion>
 				<Precio>
 					$25
 				</Precio>
-				<Imagen>/IMG/10.jpg</Imagen>
+				<Imagen>assets/img/tacos_arabes.jpeg</Imagen>
 			</Platillo>
 			<Platillo Nombre="Tamales" Orden="3">
 				<Descripcion><![CDATA[ de mole, de dulce, de salsa verde]]></Descripcion>
 				<Precio>
 					$15
 				</Precio>
-				<Imagen>/IMG/11.jpg</Imagen>
+				<Imagen>assets/img/11.jpg</Imagen>
 			</Platillo>
 			<Platillo Nombre="Tacos de carne asada" Orden="4">
 				<Descripcion><![CDATA[ 5 Tacos de carne asada con cebolla y cilantro]]></Descripcion>
 				<Precio>
 					$25
 				</Precio>
-				<Imagen>/IMG/12.jpg</Imagen>
+				<Imagen>assets/img/asada.jpeg</Imagen>
 			</Platillo>
 		</Tipo>
 
@@ -115,28 +115,28 @@
 				<Precio>
 					$15
 				</Precio>
-				<Imagen>/IMG/13.jpg</Imagen>
+				<Imagen>assets/img/refrescos.webp</Imagen>
 			</Platillo>
 			<Platillo Nombre="Agua de sabores" Orden="2">
 				<Descripcion><![CDATA[ Horchata, Jamaica y Limón]]></Descripcion>
 				<Precio>
 					$12
 				</Precio>
-				<Imagen>/IMG/14.jpg</Imagen>
+				<Imagen>assets/img/aguas.jpeg</Imagen>
 			</Platillo>
 			<Platillo Nombre="Cerveza" Orden="3">
 				<Descripcion><![CDATA[ Corona, Indio, Heineken, TKT]]></Descripcion>
 				<Precio>
 					$30
 				</Precio>
-				<Imagen>/IMG/15.jpg</Imagen>
+				<Imagen>assets/img/cervez.jpeg</Imagen>
 			</Platillo>
 			<Platillo Nombre="Agua Natural" Orden="4">
 				<Descripcion><![CDATA[ Agua natural]]></Descripcion>
 				<Precio>
 					$5
 				</Precio>
-				<Imagen>/IMG/16.jpg</Imagen>
+				<Imagen>assets/img/agua.jpeg</Imagen>
 			</Platillo>
 		</Tipo>
 	</Platillos>

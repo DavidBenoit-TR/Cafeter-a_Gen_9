@@ -388,10 +388,11 @@
 									<p>
 										<xsl:value-of select="Descripcion"/>
 									</p>
-									<p>
+									<h5>
 										<xsl:value-of select="Precio"/>
-									</p>
-									<img src="assets/img/about.jpg" alt="" style="width: 100%; height: auto;"/>
+									</h5>
+									<br/>
+									<img src="{Imagen}" alt="" style="width: 100%; height: auto;"/>
 								</div>
 							</div>
 						</xsl:for-each>
