@@ -688,7 +688,7 @@
 								<i class="bi bi-geo-alt"></i>
 								<h4>Direccion:</h4>
 								<p>
-									<xsl:value-of select="Datos/NombreRestaurant"/>
+									<xsl:value-of select="Datos/Direccion"/>
 								</p>
 							</div>
 
