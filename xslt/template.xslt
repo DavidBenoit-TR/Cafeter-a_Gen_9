@@ -161,6 +161,36 @@
 				</header>
 				<!-- End Header -->
 
+				<!-- ======= Hero Section ======= -->
+				<section id="hero" class="d-flex align-items-center">
+					<div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
+						<div class="row">
+							<div class="col-lg-8">
+								<h1>
+									<!--Recuperamos el valor del Nodo del Nombre del restaurante-->
+									Bienvenido a <span>
+										<xsl:value-of select="Datos/NombreRestaurant"/>
+									</span>
+								</h1>
+								<h2>
+									<!--Recuperamos los datos del restaurante-->
+									<xsl:value-of select="Datos/Descripcion"/>
+								</h2>
+
+								<div class="btns">
+									<a href="#menu" class="btn-menu animated fadeInUp scrollto">Our Menu</a>
+									<a href="#book-a-table" class="btn-book animated fadeInUp scrollto">Book a Table</a>
+								</div>
+							</div>
+							<div class="col-lg-4 d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">
+								<a href="https://www.youtube.com/watch?v=GlrxcuEDyF8" class="glightbox play-btn"></a>
+							</div>
+
+						</div>
+					</div>
+				</section>
+				<!-- End Hero -->
+
 				<!-- ======= Choose Section ======= -->
 				<xsl:choose>
 					<xsl:when test="$TipoMenu = 0">
@@ -324,36 +354,6 @@
 	</xsl:template>
 
 	<xsl:template name="Home">
-		<!-- ======= Hero Section ======= -->
-		<section id="hero" class="d-flex align-items-center">
-			<div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
-				<div class="row">
-					<div class="col-lg-8">
-						<h1>
-							<!--Recuperamos el valor del Nodo del Nombre del restaurante-->
-							Bienvenido a <span>
-								<xsl:value-of select="Datos/NombreRestaurant"/>
-							</span>
-						</h1>
-						<h2>
-							<!--Recuperamos los datos del restaurante-->
-							<xsl:value-of select="Datos/Descripcion"/>
-						</h2>
-
-						<div class="btns">
-							<a href="#menu" class="btn-menu animated fadeInUp scrollto">Our Menu</a>
-							<a href="#book-a-table" class="btn-book animated fadeInUp scrollto">Book a Table</a>
-						</div>
-					</div>
-					<div class="col-lg-4 d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">
-						<a href="https://www.youtube.com/watch?v=GlrxcuEDyF8" class="glightbox play-btn"></a>
-					</div>
-
-				</div>
-			</div>
-		</section>
-		<!-- End Hero -->
-
 		<!-- ======= Main Section ======= -->
 		<main id="main">
 			<!-- ======= Why Us Section ======= -->
@@ -574,7 +574,58 @@
 	</xsl:template>
 
 	<xsl:template name="Carta">
-		<h1>Carta</h1>
+		<!-- ======= Menu Section ======= -->
+		<section id="menu" class="menu section-bg">
+			<div class="container" data-aos="fade-up">
+
+				<div class="section-title">
+					<h2>Menu</h2>
+					<p>Deleitate con nuestro delicioso Menu</p>
+				</div>
+
+				<div class="row" data-aos="fade-up" data-aos-delay="100">
+					<div class="col-lg-12 d-flex justify-content-center">
+						<ul id="menu-flters">
+							<!--Dejamos el principal que nos mostrara todas las secciones-->
+							<li data-filter="*" class="filter-active">All</li>
+							<!--recorremos cada tipo de platillo para crear las opcioens-->
+							<xsl:for-each select="Platillos/Tipo">
+								<li data-filter=".filter-{@Nombre}">
+									<xsl:value-of select="@Nombre"/>
+								</li>
+							</xsl:for-each>
+						</ul>
+					</div>
+				</div>
+
+				<div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
+
+					<!--Recorremos cada tipo de paltillo -->
+					<xsl:for-each select="Platillos/Tipo/Platillo">
+						<div class="col-lg-6 menu-item filter-{../@Nombre}">
+							<img src="{Imagen}" class="menu-img" alt=""/>
+							<div class="menu-content">
+								<a href="#">
+									<!--recuperamoss el nombre del paltillo-->
+									<xsl:value-of select="@Nombre"/>
+								</a>
+								<span>
+									<!--recuperamos el precio del platillo-->
+									<xsl:value-of select="Precio"/>
+								</span>
+							</div>
+							<div class="menu-ingredients">
+								<!--recuperamos lka descripcion del platillo-->
+								<xsl:value-of select="Descripcion"/>
+							</div>
+						</div>
+					</xsl:for-each>
+
+				</div>
+
+			</div>
+		</section>
+		<!-- End Menu Section -->
 	</xsl:template>
 
 	<xsl:template name="Contacto">
