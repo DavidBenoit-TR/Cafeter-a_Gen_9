@@ -407,7 +407,7 @@
 
 					<div class="section-title">
 						<h2>Especialidades</h2>
-						<p>Conoce nuestra Especialidad</p>
+						<p>Conoce nuestras Especialidades</p>
 					</div>
 
 					<div class="events-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
@@ -488,6 +488,87 @@
 				</div>
 			</section>
 			<!-- End Events Section -->
+
+			<!-- ======= Specials Section ======= -->
+			<section id="specials" class="specials">
+				<div class="container" data-aos="fade-up">
+
+					<div class="section-title">
+						<h2>Bebidas</h2>
+						<p>Refescate con nuestras deliciosas Bebidas</p>
+					</div>
+
+					<div class="row" data-aos="fade-up" data-aos-delay="100">
+						<!--Barra Lateral-->
+						<div class="col-lg-3">
+							<ul class="nav nav-tabs flex-column">
+								<!--Recorremos cada Bebida por su Nombre y Orden-->
+								<xsl:for-each select="Platillos/Tipo[@Nombre = 'Bebidas']/Platillo">
+									<li class="nav-item">
+										<xsl:choose>
+											<xsl:when test="@Orden = 1">
+												<a class="nav-link show active" data-bs-toggle="tab" href="#tab-{@Orden}">
+													<xsl:value-of select="@Nombre"/>
+												</a>
+											</xsl:when>
+											<xsl:otherwise>
+												<a class="nav-link show" data-bs-toggle="tab" href="#tab-{@Orden}">
+													<xsl:value-of select="@Nombre"/>
+												</a>
+											</xsl:otherwise>
+										</xsl:choose>
+									</li>
+								</xsl:for-each>
+							</ul>
+						</div>
+						<!--Contenido-->
+						<div class="col-lg-9 mt-4 mt-lg-0">
+							<div class="tab-content">
+								<xsl:for-each select="Platillos/Tipo[@Nombre = 'Bebidas']/Platillo">
+									<xsl:choose>
+										<xsl:when test="@Orden = 1">
+											<div class="tab-pane active show" id="tab-{@Orden}">
+												<div class="row">
+													<div class="col-lg-8 details order-2 order-lg-1">
+														<h3>
+															<xsl:value-of select="Precio"/>
+														</h3>
+														<p class="fst-italic">
+															<xsl:value-of select="Descripcion"/>
+														</p>
+													</div>
+													<div class="col-lg-4 text-center order-1 order-lg-2">
+														<img src="{Imagen}" alt="" class="img-fluid"/>
+													</div>
+												</div>
+											</div>
+										</xsl:when>
+										<xsl:otherwise>
+											<div class="tab-pane show" id="tab-{@Orden}">
+												<div class="row">
+													<div class="col-lg-8 details order-2 order-lg-1">
+														<h3>
+															<xsl:value-of select="Precio"/>
+														</h3>
+														<p class="fst-italic">
+															<xsl:value-of select="Descripcion"/>
+														</p>
+													</div>
+													<div class="col-lg-4 text-center order-1 order-lg-2">
+														<img src="{Imagen}" alt="" class="img-fluid"/>
+													</div>
+												</div>
+											</div>
+										</xsl:otherwise>
+									</xsl:choose>
+								</xsl:for-each>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</section>
+			<!-- End Specials Section -->
 		</main>
 		<!-- End Main -->
 	</xsl:template>

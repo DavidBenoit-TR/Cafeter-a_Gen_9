@@ -115,7 +115,7 @@
 				<Precio>
 					$15
 				</Precio>
-				<Imagen>assets/img/refrescos.webp</Imagen>
+				<Imagen>assets/img/refrescos.jpeg</Imagen>
 			</Platillo>
 			<Platillo Nombre="Agua de sabores" Orden="2">
 				<Descripcion><![CDATA[ Horchata, Jamaica y Limón]]></Descripcion>
