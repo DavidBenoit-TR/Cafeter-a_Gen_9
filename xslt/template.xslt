@@ -400,6 +400,94 @@
 				</div>
 			</section>
 			<!-- End Why Us Section -->
+
+			<!-- ======= Events Section ======= -->
+			<section id="events" class="events">
+				<div class="container" data-aos="fade-up">
+
+					<div class="section-title">
+						<h2>Especialidades</h2>
+						<p>Conoce nuestra Especialidad</p>
+					</div>
+
+					<div class="events-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
+						<div class="swiper-wrapper">
+
+							<xsl:for-each select="Platillos/Tipo[@Nombre = 'Comidas']/Platillo[@Especialidad = 'SI']">
+								<!--Principal-->
+								<div class="swiper-slide">
+									<div class="row event-item">
+										<div class="col-lg-6">
+											<!--inferimos la imagen en su pocision 1-->
+											<img src="{Imagen[position()=1]}" class="img-fluid" alt=""/>
+										</div>
+										<div class="col-lg-6 pt-4 pt-lg-0 content">
+											<h3>
+												<!--Recuperamos el Nombre del Platillos-->
+												<xsl:value-of select="@Nombre"/>
+											</h3>
+											<div class="price">
+												<p>
+													<span>
+														<xsl:value-of select="Precio"/>
+													</span>
+												</p>
+											</div>
+											<p class="fst-italic">
+												<!--recuperamos el texto especial-->
+												<xsl:value-of select="TextoEspecial"/>
+											</p>
+											<!--Ingredientes-->
+											<div class="col-lg-12">
+												<div class="col-lg-12">
+													<div class="col-lg-6 pt-4 pt-lg-0 content">
+														<h3>
+															<!--recuperamos el nombre de los ingredientes-->
+															<xsl:value-of select="Ingredientes/Ingrediente[position()=1]/@Nombre"/>
+														</h3>
+														<p class="fst-italic">
+															<!--recuperamos el valor de los ingredientes-->
+															<xsl:value-of select="Ingredientes/Ingrediente[position()=1]"/>
+														</p>
+													</div>
+													<!--inferimos la imagen en su pocision 1-->
+													<img src="{Imagen[position()=2]}" class="img-fluid" alt=""/>
+												</div>
+
+												<div class="col-lg-12">
+													<div class="row event-item">
+														<xsl:for-each select="Ingredientes/Ingrediente[position()>1]">
+															<div class="col-lg-6 pt-4 pt-lg-0 content">
+																<h3>
+																	<!--recuperamos el nombre de los ingredientes-->
+																	<xsl:value-of select="@Nombre"/>
+																</h3>
+																<p class="fst-italic">
+																	<!--recuperamos el valor de los ingredientes-->
+																	<xsl:value-of select="Ingredientes/Ingrediente[position()=1]"/>
+																</p>
+																<!--inferimos la imagen en su pocision 1-->
+																<img src="{@Imagen}" class="img-fluid" alt=""/>
+															</div>
+														</xsl:for-each>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+
+							</xsl:for-each>
+							<!-- End testimonial item -->
+						</div>
+
+						<div class="swiper-pagination"></div>
+					</div>
+
+				</div>
+			</section>
+			<!-- End Events Section -->
 		</main>
 		<!-- End Main -->
 	</xsl:template>
