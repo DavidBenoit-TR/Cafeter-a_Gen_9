@@ -146,7 +146,12 @@
 		<Descripcion>Bienvenidos a Coffee Station, donde podras encontrar un excelente servicio y calidad</Descripcion>
 		<Direccion>M. Flores #516 Col. San felipe Hueyotlipan CP.72489</Direccion>
 		<Telefono>2211205394</Telefono>
+		<correo>contacto@coffestation.com</correo>
 		<Imagen>/img/Fachada.jpg</Imagen>
-		<Ubicacion></Ubicacion>
+		<Horarios>
+			<Horario>De Lunes a Jueves: 08:00 a 20:00</Horario>
+			<Horario>Viernes y Sabados: 08:00 a 22:00</Horario>
+			<Horario>Domingos: 08:00 a 16:00</Horario>
+		</Horarios>
 	</Datos>
 </Menu>

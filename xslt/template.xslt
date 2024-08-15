@@ -83,6 +83,11 @@
 				<!-- Template Main CSS File -->
 				<link href="assets/css/style.css" rel="stylesheet"/>
 
+				<!--JS References-->
+				<script type="text/javascript" src="assets/js/jquery-1.11.2.min.js"></script>
+				<!--CDN Sweet Alert 2-->
+				<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 				<!-- =======================================================
   * Template Name: Restaurantly - v3.1.0
   * Template URL: https://bootstrapmade.com/restaurantly-restaurant-template/
@@ -341,8 +346,10 @@
 				<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 				<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
 				<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-				<script src="assets/vendor/php-email-form/validate.js"></script>
+				<!--<script src="assets/vendor/php-email-form/validate.js"></script>-->
 				<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+				<!-- jQuery -->
+				<script type="text/javascript" src="assets/js/jquery-1.11.2.min.js"></script>
 
 				<!-- Template Main JS File -->
 				<script src="assets/js/main.js"></script>
@@ -629,7 +636,231 @@
 	</xsl:template>
 
 	<xsl:template name="Contacto">
-		<h1>Contacto</h1>
+
+		<!--API de Google-->
+		<script>
+			<![CDATA[
+			(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
+			key: "AIzaSyCWeeateTaYGqsHhNcmoDfT7Us-vLDZVPs",
+			// Add other bootstrap parameters as needed, using camel case.
+			// Use the 'v' parameter to indicate the version to load (alpha, beta, weekly, etc.)
+			});]]>
+		</script>
+
+		<!--Referencia a mi archivo JS-->
+		<script src="assets/js/MiScript.js" type="text/javascript"></script>
+
+		<!-- ======= Contact Section ======= -->
+		<section id="contact" class="contact">
+			<div class="container" data-aos="fade-up">
+
+				<div class="section-title">
+					<h2>Contacto</h2>
+					<p>Queremos Escucharte</p>
+				</div>
+			</div>
+			<!--Mapa-->
+			<div data-aos="fade-up">
+				<style>
+					#map {
+					border:0;
+					width: 100%;
+					height: 350px;
+					}
+				</style>
+
+				<div id="google-map">
+					<div id="map"></div>
+				</div>
+				<text id="direccion"> esta es una etiqueta de texto </text>
+				<div class="col-lg-12 margin-bottom-30" id="street"></div>
+
+				<!--<iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen=""></iframe>-->
+			</div>
+			<!--Datos y Formulario-->
+			<div class="container" data-aos="fade-up">
+
+				<div class="row mt-5">
+					<!--Datos de Contacto-->
+					<div class="col-lg-4">
+						<div class="info">
+							<div class="address">
+								<i class="bi bi-geo-alt"></i>
+								<h4>Direccion:</h4>
+								<p>
+									<xsl:value-of select="Datos/NombreRestaurant"/>
+								</p>
+							</div>
+
+							<div class="open-hours">
+								<i class="bi bi-clock"></i>
+								<h4>Horarios:</h4>
+								<xsl:for-each select="Datos/Horarios/Horario">
+									<p>
+										<xsl:value-of select="."/>
+									</p>
+								</xsl:for-each>
+							</div>
+
+							<div class="email">
+								<i class="bi bi-envelope"></i>
+								<h4>Email:</h4>
+								<p>
+									<a href="mailto:{Datos/correo}">
+										<xsl:value-of select="Datos/correo"/>
+									</a>
+								</p>
+							</div>
+
+							<div class="phone">
+								<i class="bi bi-phone"></i>
+								<h4>Telefono:</h4>
+								<p>
+									<xsl:value-of select="Datos/Telefono"/>
+								</p>
+							</div>
+
+						</div>
+
+					</div>
+					<!--Formulario-->
+					<div class="col-lg-8 mt-5 mt-lg-0">
+						<!--Action => se refiere a la acción que se ejecutará al enviar le formulario, generalemnte usamos una URL o bien un controlador-->
+						<!--method => hace referencia al cómo se enviará la petición del formulario, en esta caso y en su mayoría lo enviamos bajo una petición 'POST' que significa que enviará los datos en 2do plano dentro del cuerpo de la petición-->
+						<form action="#" method="post" role="form" class="php-email-form">
+
+							<div class="row">
+								<div class="col-md-6 form-group">
+									<input type="text" name="contact_name" class="form-control" id="contact_name" placeholder="Ingrese su Nombre" required=""/>
+								</div>
+								<div class="col-md-6 form-group mt-3 mt-md-0">
+									<input type="email" class="form-control" name="contact_mail" id="contact_mail" placeholder="Ingrese su Email" required=""/>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-md-6 form-group">
+									<input type="number" id="contact_people" class="form-control" required="true" max="8" min="1" placeholder="# de Personas"/>
+								</div>
+								<div class="col-md-6 form-group mt-3 mt-md-0">
+									<input type="number" id="contact_add" class="form-control" required="true" max="4" min="0" placeholder="# de Personas Adicionales"></input>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6 form-group mt-3 mt-md-0">
+									<input type="date" id="contact_fecha" name="contact_fecha" class="form-control" required="true"></input>
+								</div>
+
+								<div class="col-md-6 form-group mt-3 mt-md-0">
+									<input type="time" id="contact_hora" name="contact_hora" class="form-control" required ="true" max="19:00:00" min="08:00:00"></input>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6 form-group mt-3 mt-md-0">
+									<output id="total" class="form-control" disable="true"></output>
+								</div>
+							</div>
+							<!--<div class="my-3">
+								<div class="loading">Loading</div>
+								<div class="error-message"></div>
+								<div class="sent-message">Your message has been sent. Thank you!</div>
+							</div>-->
+							<div class="text-center">
+								<br/>
+								<br/>
+								<br/>
+								<!--<button type="submit">Enviar Reservacion</button>-->
+								<a class="book-a-table-btn" id="miBoton" onclick="enviar_formulario()">Presionar</a>
+							</div>
+						</form>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			<script>
+				$(document).ready(function () {
+				//recuperar la fecha actual del servidor (donde se ejecuta el sistema)
+				var now = new Date(Date.now());
+				//recupero el control de "contact_hora"
+				var timecontrol = document.getElementById("contact_hora");
+				//recupero la hora y minutos actuales del servidor (donde se ejecuta el sistema)
+				var horas = now.getHours();
+				var minutos = now.getMinutes();
+
+				//imprimo en consola los resultados
+				//console.log("now: " + now);
+				//console.log("horas: " + horas);
+				//console.log("minutos: " + minutos);
+				//console.log("timecontrol: " + timecontrol);
+
+				//Validar Formato de la hora
+				if (horas <![CDATA[<]]> 10) {
+				horas = "0" + horas;
+				}
+				if (minutos <![CDATA[<]]> 10) {
+				minutos = "0" + minutos;
+				}
+
+				var formatted = horas + ":" + minutos;
+				//console.log("formatted: " + formatted);
+				//Asigno la hora al control de "contact_hora"
+				//JS
+				timecontrol.value = formatted;
+				//JQuery Puro
+				$("#contact_hora").val(formatted);
+				//JQUERY apelando al atributo
+				$("#contact_hora").attr("value", formatted);
+
+				//Para la Fecha
+				var dia = now.getDate();
+				var mes = now.getMonth() + 1; //asigno +1 ya que los meses son parte de un array que empieza en 0
+				var anio = now.getFullYear();
+
+				//imprimo los valores para corroborar
+				//console.log("dia: " + dia);
+				//console.log("mes: " + mes);
+				//console.log("anio: " + anio);
+
+				//validación de 0 utilizando operadores ternarios
+				//condición ? verdadero : falso
+				dia = dia <![CDATA[<]]> 10 ? "0" + dia : dia;
+				mes = mes <![CDATA[<]]> 10 ? "0" + mes : mes;
+
+				var fechaFormatted = anio + "-" + mes + "-" + dia;
+				//console.log("fechaFormatted: " + fechaFormatted);
+
+				//Asignar los valores usando JS, JQuery(2) al elemento 'contact_fecha'
+				//JS
+				var fechacontrol = document.getElementById("contact_fecha");
+				fechacontrol.value = fechaFormatted;
+				//JQuery asignando Valor
+				$("#contact_fecha").val(fechaFormatted);
+				//Jquery apelando al atributo
+				$("#contact_fecha").attr("value", fechaFormatted);
+
+				initMap();
+				getGeo();
+
+
+				}); //fin de docuemnt.ready
+
+				//Validaciones
+				var personas = document.getElementById('contact_people')
+				var personas_add = document.getElementById('contact_add')
+
+				personas.value = 1
+				personas_add.value = 0
+
+				validar();
+
+
+			</script>
+		</section>
+		<!-- End Contact Section -->
+
 	</xsl:template>
 
 	<xsl:template name="PlayRoom">
